@@ -6,6 +6,7 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 };
+
 /*==================== scroll sections active link ====================*/
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
@@ -25,18 +26,31 @@ window.onscroll = () => {
         };
     });
 
-
-    /*==================== sticky navbar ====================*/
+    /*==================== TOGGLE ABOUT ME READ MORE ====================*/
     let header = document.querySelector('header');
-
     header.classList.toggle('sticky', window.scrollY > 100);
-
 
     /*==================== remove toggle icon and navbar when click navbar link (scroll) ====================*/
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 };
 
+/*==================== TOGGLE ABOUT ME READ MORE ====================*/
+function toggleReadMore() {
+    var moreContent = document.getElementById("more-content");
+    var btn = document.getElementById("read-more-btn");
+
+    if (moreContent.style.display === "none") {
+        moreContent.style.display = "block";
+        btn.textContent = "Read Less";
+    } else {
+        moreContent.style.display = "none";
+        btn.textContent = "Read More";
+    }
+}
+
+// Initialize the state
+document.getElementById("more-content").style.display = "none";
 
 /*==================== scroll reveal ====================*/
 ScrollReveal({
@@ -44,7 +58,6 @@ ScrollReveal({
     distance: '80px',
     duration: 2000,
     delay: 200
-
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction -PowerCo Telecom Industry</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #323946;
+            color:white;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #1f242d;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        h1{
+            color:#fff ;
+            padding: 1%;
+            text-align: center;
+        }
+
+        h2, h3 {
+            color: aqua;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+        }
+
+        .code-block {
+            background: #323946;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #007bff;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Customer Churn Prediction Project</h1>
+
+        <h2>1. Project Overview</h2>
+        <p>Here are the some key points to be analysed and investigated.</p>
+        <ul>
+            <li>
+                My client is <strong>PowerCo - </strong>a major gas and electricity utility that supplies to small and medium sized enterprises.
+            </li>
+            <li>
+                The energy market has had a lot of change in recent years and there are more options than ever for customers to choose from.
+            </li>
+            <li>
+                PowerCo are concerned about their customers leaving for better offers from other energy providers. When a customer leaves to use another service provider, this is called <strong>Churn</strong>.            </li>
+            <li>
+                This is becoming a big issue for PowerCo and they have engaged BCG to help <strong>diagnose the reason why their customers are churning</strong>.
+            </li>
+        </ul>
+        <h2>2. Dataset</h2>
+        <p>The project involved the use of three distinct CSV files, each serving a specific purpose in the analysis:</p>
+        <ul>
+            <li>
+                <strong>Customer data </strong>- which should include characteristics of each client, for example, industry, historical electricity consumption, date joined as customer etc.
+            </li>
+            <li>
+                <strong>Churn data </strong>- which should indicate if customer has churned
+            </li>
+            <li>
+                <strong>Historical price data </strong>- which should indicate the prices the client charges to each customer for both electricity and gas at granular time intervals.
+            </li>
+           
+        </ul>
+
+
+        <h2>3. Methodology</h2>
+        <ul>
+            <h3>A. Problem Definition</h3>
+            <p><strong>Objective:</strong> Predict customer churn to identify customers at risk of leaving the company.</p>
+            <p><strong>Business Impact:</strong> Reducing churn improves customer retention and increases revenue.</p>
+
+            <h3>B. Data Collection</h3>
+            <p>The client has sent over 3 data sets (shown below):</p>
+            <p>1. Historical customer data: Customer data such as usage, sign up date, forecasted usage etc.</p>
+            <p>2. Historical pricing data: variable and fixed pricing data etc.</p>
+            <p>3. Churn indicator: whether each customer has churned or not</p>
+
+            <h3>C. Data Preprocessing</h3>
+            <p><strong>Data Cleaning:</strong> Handle missing values, outliers, and duplicates. Explain techniques used for imputation or removal.</p>
+            <p><strong>Feature Engineering:</strong> Describe the creation of new features based on existing data, such as calculating customer tenure or recency, frequency, and monetary (RFM) scores.</p>
+            <p><strong>Data Transformation:</strong> Normalize or scale features, encode categorical variables, and split the dataset into training and testing sets.</p>
+
+            <h3>D. Exploratory Data Analysis (EDA)</h3>
+            <p><strong>Data Exploration:</strong> Analyze the distribution of features, relationships between variables, and identify patterns that might indicate churn.</p>
+            <p><strong>Visualization:</strong> Use plots and charts to visualize key findings, such as churn rates across different segments.</p>
+
+            <h3>E. Model Selection</h3>
+            <p><strong>Algorithm Choice:</strong> Justify the choice of machine learning algorithms (e.g., Logistic Regression, Random Forest, Gradient Boosting, Neural Networks).</p>
+            <p><strong>Baseline Model:</strong> Start with a simple model to establish a baseline for performance comparison.</p>
+
+            <h3>F. Model Training and Tuning</h3>
+            <p><strong>Model Training:</strong> Train the selected models on the training data.</p>
+            <p><strong>Hyperparameter Tuning:</strong> Use techniques like Grid Search or Random Search to find the best hyperparameters.</p>
+            <p><strong>Cross-Validation:</strong> Apply cross-validation to assess the model’s generalizability and reduce overfitting.</p>
+
+            <h3>G. Model Evaluation</h3>
+            <p><strong>Metrics:</strong> Evaluate models using metrics such as accuracy, precision, recall, F1 score, and ROC-AUC.</p>
+            <p><strong>Confusion Matrix:</strong> Analyze the confusion matrix to understand false positives and false negatives.</p>
+            <p><strong>Comparison:</strong> Compare the performance of different models and select the best one based on the evaluation metrics.</p>
+
+            <h3>H. Feature Importance</h3>
+            <p><strong>Interpretability:</strong> Identify the most important features influencing churn, using techniques like feature importance from tree-based models or SHAP values.</p>
+
+            <h3>I. Deployment Strategy</h3>
+            <p><strong>Model Deployment:</strong> Discuss how the model will be deployed in a production environment (e.g., using Flask API, cloud services).</p>
+            <p><strong>Monitoring:</strong> Outline the plan for monitoring model performance over time and retraining as necessary.</p>
+
+            <h3>J. Conclusion</h3>
+            <p><strong>Summary:</strong> Recap the key findings and the effectiveness of the model.</p>
+            <p><strong>Business Implications:</strong> Discuss the potential impact on business operations and strategies to reduce churn based on the model’s predictions.</p>
+
+            <h3>K. Future Work</h3>
+            <p><strong>Improvements:</strong> Suggest potential improvements, such as incorporating additional data sources, testing different algorithms, or refining features.</p>
+            <p><strong>Scalability:</strong> Consider how the model could be scaled or adapted for other segments or markets.</p>
+        </ul>
+        <h3>Data Visualization</h3>
+        <ul>
+            <p>Key visualizations included time series analysis of Custumer churn distribution, Customer demographics, Behavioral Patterns,Churn Prediction Model Performance, Comparative Analysis of Features.</p>
+            <p>Below is an example of a stacked bar chart showing Customers churn distribution :</p>
+            <div class="gallery">
+                <img src="Project_Churn_DS/churning_status.png" alt="Customers churn distribution">
+            </div>
+        </ul>
+        <h2>4. Insights & Analysis</h2>
+        <h3>Key Findings after EDA</h3>
+        <ul>
+            <li>
+                The visualization shows how many companies churned vs. how many companies did not churn. We can see from this that the churn rate is approximately 10%. This is actually a very good churn rate, the closer the rate is to 0%, the better.
+            </li>
+            <li>
+                The next series of visualizations were created in an attempt to try and dive deeper into how churn changes based on other factors (using other columns). This is useful for us to investigate because it may help us to understand factors that drive churn.
+            </li>
+            <ul>
+                <li>
+                    <strong>Sales Channel:</strong> We observed that certain sales channels result in customers churning, while others show no churn. This highlights the varying impact of different sales channels on customer retention.
+                </li>
+                <li>
+                    <strong>Contract Type:</strong> The churn rate is evenly split across different contract types. This suggests that contract type may not be a significant factor driving churn, which is an important insight for further analysis.
+                </li>
+                <li>
+                    <strong>Distribution of Columns with Churn Rate:</strong> Analyzing the distribution of certain columns with respect to churn rate helps us understand how these variables might impact customer behavior. These distributions are crucial for feature engineering in later stages.
+                </li>
+            </ul>
+            <p>We also examined the distribution of consumption, subscribed power, and forecast in the dataset.</p>
+
+        <ul>
+            <li>
+                <strong>Consumption Distribution:</strong> The distribution of consumption is positively skewed, with a bias towards lower values on the x-axis. This is notable as we may need to address this skewness during feature engineering. Additionally, the skewness might prompt us to investigate outliers in this column.
+            </li>
+            <li>
+                <strong>Outliers:</strong> Using a boxplot, we identified the presence of outliers in the consumption column. This discovery is important because it could influence our decision to remove or treat these outliers in subsequent steps.
+            </li>
+        </ul>
+
+        <p>These insights provide a deeper understanding of the factors influencing churn and guide us in refining our feature engineering process to improve model performance.</p>
+
+        </ul>
+
+        <h3>Key Insights after Feature Engineering</h3>
+        <ul>
+            <p>Firstly, we analyzed the average price changes across periods. This metric measures the average price change by company between peak, mid-peak, and off-peak periods.</p>
+            <p>We then extended this concept by creating another feature that looks at the maximum price difference across periods and months. This provides an additional perspective on price changes throughout the year.</p>
+            <p>The significance of these two features lies in their ability to represent the variance of prices over time. For example, if a consumer’s utility bill significantly increases during the winter, they might become frustrated and seek a better deal. These features capture that variance.</p>
+
+            <p>Following this, we continued feature engineering with additional transformations:</p>
+
+            <ul>
+                <li>
+                    <strong>Numeric Data Conversion:</strong> To make predictions using statistical or machine learning algorithms, all data must be converted to numeric types. Therefore, we transformed the date column into months and removed the original date column, as it cannot be used in its raw form.
+                </li>
+                <li>
+                    <strong>Boolean and Categorical Conversion:</strong> Boolean columns were converted into binary values, and categorical columns were transformed into dummy variables. A dummy variable is a binary flag that indicates when a row matches the value from the categorical column it was created from.
+                </li>
+                <li>
+                    <strong>Handling Skewed Distributions:</strong> During exploratory data analysis, we identified that some columns had skewed distributions. This is important because certain modeling techniques assume that data follows a normal distribution. To address this, we transformed these columns using the logarithm function to achieve a distribution closer to normal. As demonstrated by the visualizations, the transformed columns are now much closer to a normal distribution than they were before.
+                </li>
+            </ul>
+
+            <p>Finally, we plotted the correlations between all columns to identify any highly correlated pairs. High correlations suggest redundancy, and in such cases, one of the correlated columns may be removed as they likely contain similar information.</p>
+
+        </ul>
+        <h3>Key Insights after Model Evaluation</h3>
+        <ul>
+            <li>
+                After calculating the 3 metrics, we can see that we’re able to accurately identify clients that do not churn, but not so accurately identify clients that will churn. Our model is predicting a high percentage of clients to not churn, when in fact they did!
+            </li>
+            <li>
+                This tells me that the current set of columns are not a good set of features to predict churn. As the data scientist, it would normally be my job to go back and try to engineer a set of features that is able to predict churn more accurately.
+            </li>
+        </ul>
+
+        
+
+        <h3>Business Implications</h3>
+        <ul>
+            <li>
+                We can see that net margin and consumption over 12 months were important, to name a few.
+            </li>
+            <li>   
+                However the price sensitivity features are scattered around and do not shine through as a main driver for churn in their current form.
+            </li>
+        </ul>
+        
+
+        <h2>5. Executive Summary</h2>
+        <img src="Project_Churn_DS/Executive Summary Model Answer-1.png" alt="Customers churn distribution">
+
+        
+        <h2>6. Tools & Technologies</h2>
+        <p>This project was executed using the following tools and technologies:</p>
+        <ul>
+            <li>Python Libraries (e.g., Pandas, NumPy)</li>
+            <li>Visualization Libraries (e.g., Matplotlib, Seaborn)</li>
+            <li>Feature Engineering : Scikit-learn for transformations and encoding</li>
+            <li>Modeling & Machine Learning : Random Forest Classifier & Evaluation metrics</li>
+            <li>Microsoft PowerBi for creating interactive dashboards.</li>
+            <li>Exploratory Data Analysis (EDA) by Jupyter Notebooks.</li>
+            <li>Project Management Tools : Visual Studio Code</li>
+            <li>Collaboration & Version Control : Git/GitHub for version control</li>
+        </ul>
+
+        <h2>7. Conclusion</h2>
+        <p>Based on our analysis, we can draw the following conclusions:</p>
+
+        <ul>
+            <li><strong>Net Margin and Consumption:</strong> These factors over a 12-month period are top drivers for churn in our model.</li>
+            <li><strong>Margin on Power Subscription:</strong> This is also an influential driver of churn.</li>
+            <li><strong>Time Factors:</strong> The length of time customers have been active, their tenure, and the number of months since their last contract update are significant factors in customer churn.</li>
+            <li><strong>Recommended Feature:</strong> The feature recommended by our colleague ranks in the top half in terms of influence. Additionally, some features built from this recommendation have even better performance.</li>
+            <li><strong>Price Sensitivity:</strong> While price sensitivity features are present, they are not the primary drivers of churn. Instead, they are weak contributors to the overall churn prediction model.</li>
+        </ul>
+
+        <p>This last observation is crucial as it relates to our original hypothesis:</p>
+        <blockquote>
+            <p><strong>Is churn driven by the customers' price sensitivity?</strong></p>
+        </blockquote>
+
+        <p>Our findings indicate that price sensitivity is not a major driver of churn but rather a minor factor. To reach a more definitive conclusion, further experimentation and analysis are necessary.</p>
+
+
+
+        <h2>8. Project Gallery</h2>
+        <p>Below are some key visualizations from the project:</p>
+        <div class="gallery">
+            <img src="Project_Churn_DS/output_margin_outliers.png" alt="Outliers in the margin">
+            <img src="Project_Churn_DS/output_distribution.png" alt="Distribution for some variables">
+            <img src="Project_Churn_DS/output_correlation.png" alt="Correlation Matrix">
+            <img src="Project_Churn_DS/output_feature_importance.png" alt="Feature Importance">
+        
+        </div>
+        <h2>9. Download/Access Project</h2>
+        <p>You can access the full project on GitHub:</p>
+        <a href="https://github.com/SachinMK4015/AtliQ-Hotels-Data-Analysis-Project/tree/ce134786eb6d64069bb4574de60e8b33ed10f000/3_project_hospitality_analysis" class="btn">View on GitHub</a>
+        <p>Explore the interactive dashboard here:</p>
+        <a href="https://public.tableau.com/profile/your-profile#!/vizhome/HotelAnalytics/Dashboard" class="btn">View Dashboard</a>
+    </div>
+
+</body>
+
+</html>

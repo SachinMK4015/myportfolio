@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Data Analytics Project</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #323946;
+            color:white;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #1f242d;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        h1{
+            color:#fff ;
+            padding: 1% 25%;
+        }
+
+        h2, h3 {
+            color: aqua;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+        }
+
+        .code-block {
+            background: #323946;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #007bff;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Hotel Data Analytics Project</h1>
+
+        <h2>1. Project Overview</h2>
+        <p>This project involved analyzing hotel booking data to uncover trends, optimize pricing strategies, and improve customer satisfaction. The aim was to provide actionable insights that could help hotel management make data-driven decisions.</p>
+
+        <h2>2. Dataset</h2>
+        <p>The project involved the use of five distinct CSV files, each serving a specific purpose in the analysis:</p>
+        <ul>
+            <li>
+                <strong>dim_date.csv:</strong> This file contains the date dimension data, providing detailed information about the dates, including the year, month, day, and other relevant date-related attributes.
+            </li>
+            <li>
+                <strong>dim_hotels.csv:</strong> This file contains information about the hotels, including hotel IDs, names, locations, and other descriptive attributes that uniquely identify and characterize each hotel in the dataset.
+            </li>
+            <li>
+                <strong>dim_rooms.csv:</strong> This file contains data related to the room types available in each hotel, including room ID, room type, capacity, and other attributes that describe the various room options offered.
+            </li>
+            <li>
+                <strong>fact_aggregated_bookings.csv:</strong> This fact table contains aggregated booking data, including metrics such as total bookings, revenue generated, and average occupancy rates, aggregated by various dimensions like date, hotel, and room type.
+            </li>
+            <li>
+                <strong>fact_bookings.csv:</strong> This file contains detailed booking data, including individual booking records with information about booking IDs, customer IDs, booking dates, room IDs, and financial details such as revenue generated and revenue realized.
+            </li>
+        </ul>
+
+
+        <h2>3. Methodology</h2>
+        <h3>Exploratory Data Analysis (EDA)</h3>
+        <p>We conducted an exploratory data analysis to identify key trends in the data. Tools such as Pandas, Matplotlib, and Seaborn were used to create visualizations like histograms, heatmaps, and time series plots.</p>
+        <p>For example, a bar graph is generated to show the bookings done by different platforms:</p>
+        <div class="code-block">
+            <code>
+                import seaborn as sns
+                <br>import matplotlib.pyplot as plt
+                <br>platform_counts = df_bookings.booking_platform.value_counts()
+                <br>sns.set_style("whitegrid")
+                <br>colors = sns.color_palette("pastel", len(platform_counts))
+                <br>plt.figure(figsize=(10, 6))
+                <br>platform_counts.plot(kind="bar", color=colors, edgecolor='black')
+                <br>plt.title('Frequency of Bookings by Platform', fontsize=16, fontweight='bold', pad=20)
+                <br>plt.xlabel('Booking Platform', fontsize=14, fontweight='bold')
+                <br>plt.ylabel('Number of Bookings', fontsize=14, fontweight='bold')
+                <br>plt.xticks(rotation=45, ha='right', fontsize=12)
+                <br>plt.grid(axis='y', linestyle='--', alpha=0.7)
+                <br>plt.tight_layout()
+                <br>plt.show()
+            </code>
+        </div>
+
+        <h3>Data Visualization</h3>
+        <p>Key visualizations included time series analysis of bookings, customer demographics, and revenue distribution. Below is an example of a bar chart showing customer ratings by city:</p>
+        <div class="gallery">
+            <img src="Project_Hotel_DA\img_project_hotel\output_avg_rtgs_per_city.png" alt="Customer rating Analysis">
+        </div>
+
+        <h2>4. Insights & Analysis</h2>
+        <h3>Key Findings</h3>
+        <ul>
+            <li>
+                <strong>Platform Booking Frequency:</strong> 
+                The analysis revealed that "Make Your Trip" and other similar platforms recorded the highest frequency of bookings, indicating their strong market presence and customer preference.
+            </li>
+            <li>
+                <strong>Revenue Realized:</strong> 
+                The "Presidential Suites" category generated the highest revenue, with a maximum value recorded at ₹45,220, highlighting its significance in the hotel’s revenue stream.
+            </li>
+            <li>
+                <strong>Average Occupancy by Room Class:</strong>
+                The average occupancy rates for different room classes were as follows:
+                <ul>
+                    <li><strong>Elite:</strong> 58.01%</li>
+                    <li><strong>Premium:</strong> 58.03%</li>
+                    <li><strong>Presidential:</strong> 59.28%</li>
+                    <li><strong>Standard:</strong> 57.89%</li>
+                </ul>
+                The "Presidential" room class had the highest average occupancy, suggesting strong demand for luxury accommodations.
+            </li>
+            <li>
+                <strong>Average Occupancy Rate by City:</strong>
+                The average occupancy rates across key cities were:
+                <ul>
+                    <li><strong>Bangalore:</strong> 56.33%</li>
+                    <li><strong>Delhi:</strong> 61.51%</li>
+                    <li><strong>Hyderabad:</strong> 58.12%</li>
+                    <li><strong>Mumbai:</strong> 57.91%</li>
+                </ul>
+                Delhi recorded the highest average occupancy rate, indicating a robust market for hotel stays in the capital.
+            </li>
+            <li>
+                <strong>Occupancy Rates by Day Type:</strong> 
+                The occupancy rates were significantly higher during weekends compared to weekdays:
+                <ul>
+                    <li><strong>Weekday:</strong> 51.81%</li>
+                    <li><strong>Weekend:</strong> 73.96%</li>
+                </ul>
+                This trend suggests that weekends are the peak period for hotel stays, likely due to leisure travel and events.
+            </li>
+        </ul>
+
+        
+
+        <h3>Business Implications</h3>
+        <p>The insights from this analysis suggest that hotel management could improve revenue by dynamically adjusting room rates based on demand patterns. Additionally, targeted marketing campaigns could be developed for different customer segments.</p>
+
+        <h2>5. Challenges & Solutions</h2>
+        <h3>Challenges</h3>
+        <p>One of the primary challenges encountered during the project was managing inaccuracies in the revenue-related data, specifically in the "Revenue Generated" and "Revenue Realized" fields. These discrepancies could have significantly skewed the analysis, leading to misleading conclusions. Addressing this issue was critical to ensure the integrity and reliability of the insights derived from the data.</p>
+
+        <h3>Solutions</h3>
+        <p>We used imputation techniques to fill in missing values and removed records that were incomplete beyond a certain threshold. Additionally, we employed statistical tests to ensure the validity of the imputed data.</p>
+
+        <h2>6. Tools & Technologies</h2>
+        <p>This project was executed using the following tools and technologies:</p>
+        <ul>
+            <li>Python for data cleaning, EDA, and analysis</li>
+            <li>Pandas, NumPy, Matplotlib, and Seaborn for data manipulation and visualization</li>
+            <li>Microsoft PowerBi for creating interactive dashboards</li>
+            <li>Jupyter Notebooks for organizing and presenting the analysis</li>
+            <li>Worked in Visual Studio Code Platform </li>
+        </ul>
+
+        <h2>7. Conclusion</h2>
+        <p>In conclusion, the Hotel Data Analytics project provided valuable insights into customer behavior and booking trends. These findings can help hotels optimize their operations and increase profitability. Future work could involve applying machine learning techniques to predict customer churn and personalize marketing efforts.</p>
+
+        <h2>8. Project Gallery</h2>
+        <p>Below are some key visualizations from the project:</p>
+        <div class="gallery">
+            <img src="Project_Hotel_DA/img_project_hotel/output_rvn_gntd_by_bkg_pf.png" alt="Revenue by Booking Platform">
+            <img src="Project_Hotel_DA/img_project_hotel/output_ttl_rvn_by_city.png" alt="Total Revenue by City">
+            <img src="Project_Hotel_DA/img_project_hotel/output_ttl_rvn_by_ppty.png" alt="Total Revenue by Property">
+            <img src="Project_Hotel_DA/img_project_hotel/output_ttl_rvn_by_time.png" alt="Booking Trend by Month">
+        </div>
+        <h2>9. Download/Access Project</h2>
+        <p>You can access the full project on GitHub:</p>
+        <a href="https://github.com/SachinMK4015/AtliQ-Hotels-Data-Analysis-Project/tree/ce134786eb6d64069bb4574de60e8b33ed10f000/3_project_hospitality_analysis" class="btn">View on GitHub</a>
+        <p>Explore the interactive dashboard here:</p>
+        <a href="https://public.tableau.com/profile/your-profile#!/vizhome/HotelAnalytics/Dashboard" class="btn">View Dashboard</a>
+    </div>
+
+</body>
+
+</html>

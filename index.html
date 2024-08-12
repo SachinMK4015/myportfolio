@@ -16,7 +16,7 @@
   <body>
     <!-- header design -->
     <header class="header">
-      <a href="#" class="logo">Portrfolio</a>
+      <a href="#" class="logo">Technical<span> Horoscope</span></a>
 
       <i class='bx bx-menu' id="menu-icon"></i>
       
@@ -36,12 +36,12 @@
         <h3>And I'm <span class="multiple-text"></span></h3>
         <p>Things get done only if the data we gather can inform and inspire those in a position to make a difference.</p>
         <div class="social_media">
-          <a href="#"><i class='bx bxl-meta'></i></a>
-          <a href="#"><i class='bx bxl-twitter'></i></a>
-          <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
-          <a href="#"><i class='bx bxl-linkedin'></i></a>
+          <a href="https://github.com/SachinMK4015?tab=repositories" target="_blank"><i class='bx bxl-github'></i></a>
+          <a href="https://x.com/sachinmk15" target="_blank"><i class='bx bxl-twitter'></i></a>
+          <a href="https://www.instagram.com/sachin_k_2008/" target="_blank"><i class='bx bxl-instagram-alt' ></i></a>
+          <a href="https://www.linkedin.com/in/sachin-mk4015/" target="_blank"><i class='bx bxl-linkedin'></i></a>
         </div>
-        <a href="#" class="btn">Download CV</a>
+        <a href="files/SachinMK_DS.pdf" class="btn">Download CV</a>
       </div>
       
       <div class="home-img">
@@ -56,13 +56,18 @@
       </div>
 
       <div class="about-content">
-        <h2 class="heading">About<span>Me</span></h2>
+        <h2 class="heading">About <span>Me</span></h2>
         <h3>Data Scientist!</h3>
         <p>"Highly motivated and detail-oriented entry-level data scientist with a strong foundation in data analysis, statistical
         modeling, and machine learning. Proficient in Python, with hands-on experience in data manipulation, visualization, and
-        cleaning . Eager to apply problem-solving skills and analytical expertise to drive data-driven decision-making in a
+        cleaning. Eager to apply problem-solving skills and analytical expertise to drive data-driven decision-making in a
         dynamic organization."</p>
-        <a href="#" class="btn">Read More</a>
+        <div id="more-content" class="more-content">
+            <p>Here is the extended version. I have more details about my background, interests, and experiences...</p>
+        </div>
+        <!-- <a href="javascript:void(0);" class="btn" id="read-more-btn" onclick="toggleReadMore()">Read More</a> -->
+        <a href="academic.html" class="btn">Read More</a>
+        
       </div>
      </section>
 
@@ -106,17 +111,17 @@
         <div class="portfolio-box">
           <img src="images/portfolio1.jpg"alt="">
           <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Created portfolio website to showcase my profile using html, css & node.js</p>
-            <a href="#"><i class='bx bx-link-external'></i></a>
+            <h4>Data Analysis</h4>
+            <p>Customer Churn Analysis - PowerCo - major gas and electricity utility</p>
+            <a href="project_churn.html"><i class='bx bx-link-external'></i></a>
           </div>
         </div>
         <div class="portfolio-box">
           <img src="images/portfolio2.jpg"alt="">
           <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Created portfolio website to showcase my profile using html, css & node.js</p>
-            <a href="#"><i class='bx bx-link-external'></i></a>
+            <h4>Data Analytics</h4>
+            <p>Hotel Data Analytics Project Using PowerBi & Jupyter Notebook</p>
+            <a href="project_hotel.html"><i class='bx bx-link-external'></i></a>
           </div>
         </div>
         <div class="portfolio-box">
@@ -160,18 +165,19 @@
     <section class="contact" id="contact">
       <h2 class="heading">Contact <span>Me!</span></h2>
 
-      <form action="#">
-        <div class="input-box">
-          <input type="text" placeholder="Full Name">
-          <input type="email" placeholder="Email Address">
-        </div>
-        <div class="input-box">
-          <input type="number" placeholder="Mobile Number">
-          <input type="text" placeholder="Email Subject">
-        </div>
-        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-        <input type="submit" value="Send Message" class="btn">
-      </form>
+        <form action="https://formspree.io/f/mqazbwjk" method="post">
+          <div class="input-box">
+            <input type="text" placeholder="Full Name" name="name" required>
+            <input type="email" placeholder="Email Address" name="email" required>
+          </div>
+          <div class="input-box">
+            <input type="number" placeholder="Mobile Number" name="mobile">
+            <input type="text" placeholder="Email Subject" name="subject" required>
+          </div>
+          <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+         <input type="submit" value="Send Message" class="btn">
+        </form>
+          
     </section>
 
     <!-- footer design -->
